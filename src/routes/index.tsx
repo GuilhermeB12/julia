@@ -10,11 +10,10 @@ import {
   MapPin,
   Heart,
   Sparkles,
-  Quote,
   Compass,
   Briefcase
 } from "lucide-react";
-import heroImage from "@/assets/hero.jpg";
+import heroImage from "@/assets/hero.png";
 import fotoPost1 from "@/assets/post1.jpg";
 import fotoPost2 from "@/assets/post2.jpg";
 import fotoPost3 from "@/assets/post3.jpg";
@@ -29,45 +28,27 @@ const services = [
   {
     icon: Compass,
     title: "Psicoterapia para Adultos",
-    text: "Espaço seguro para autoconhecimento, transições de vida, relacionamentos e tratamento de ansiedade ou depressão.",
+    text: "Um espaço seguro de escuta e acolhimento para compreender emoções, fortalecer o autoconhecimento e enfrentar os desafios da vida com mais leveza.",
   },
   {
-    icon: Briefcase,
-    title: "Gestão de Estresse e Burnout",
-    text: "Apoio focado em adultos para lidar com a pressão do ambiente de trabalho, rotina exaustiva e esgotamento mental.",
+    icon: Sparkles,
+    title: "Psicoterapia Infantil",
+    text: "Um cuidado sensível e individualizado, que utiliza o brincar para favorecer o desenvolvimento emocional, comportamental e social da criança.",
   },
   {
     icon: Brain,
-    title: "Psicoterapia Infantojuvenil",
-    text: "Escuta acolhedora e cuidado individualizado, baseado em evidências, para crianças, adolescentes e orientação de pais.",
+    title: "Psicoterapia para Adolescentes",
+    text: "Um espaço de confiança e acolhimento para lidar com emoções, autoestima, relacionamentos e os desafios dessa fase da vida.",
   },
   {
     icon: Puzzle,
-    title: "Aplicadora ABA",
-    text: "Intervenção comportamental estruturada, com planos personalizados que respeitam o tempo e a singularidade de cada pessoa.",
+    title: "Intervenção Comportamental (ABA)",
+    text: "Acompanhamento individualizado para desenvolver habilidades, promover autonomia e favorecer a qualidade de vida, respeitando as necessidades de cada pessoa.",
   },
   {
     icon: GraduationCap,
-    title: "Acompanhante Terapêutica",
-    text: "Suporte escolar, domiciliar e clínico — presença ativa nos ambientes onde a rotina realmente acontece.",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Mariana R.",
-    role: "Mãe de paciente",
-    text: "O acompanhamento transformou a rotina do meu filho. A escuta atenta e o carinho fazem toda a diferença — enfim encontramos alguém que entende de verdade.",
-  },
-  {
-    name: "Carla T.",
-    role: "Mãe atendida",
-    text: "Profissional dedicada, ética e humana. A abordagem ABA foi explicada com clareza e vejo evolução a cada semana.",
-  },
-  {
-    name: "Ana Paula",
-    role: "Coordenadora escolar",
-    text: "Trabalhar em parceria dentro da escola trouxe segurança para toda a equipe. Um olhar técnico e afetuoso ao mesmo tempo.",
+    title: "Visitas Escolares e Domiciliares",
+    text: "Acompanhamento e orientação nos ambientes em que a criança está inserida, buscando compreender suas necessidades e favorecer seu desenvolvimento no dia a dia.",
   },
 ];
 
@@ -75,7 +56,7 @@ const posts = [
   {
     title: "4 sinais de atraso no desenvolvimento",
     excerpt: "Reconheça os sinais e tome medidas: identificando e abordando atrasos no desenvolvimento!",
-    tag: "ABA",
+    tag: "Infantil",
     href: "https://www.instagram.com/p/C3vi7aQpqBt/?img_index=1",
     image: fotoPost1,
   },
@@ -112,7 +93,6 @@ function Index() {
             <a href="#sobre" className="hover:text-foreground transition">Sobre</a>
             <a href="#servicos" className="hover:text-foreground transition">Serviços</a>
             <a href="#publicacoes" className="hover:text-foreground transition">Publicações</a>
-            <a href="#depoimentos" className="hover:text-foreground transition">Depoimentos</a>
             <a href="#contato" className="hover:text-foreground transition">Contato</a>
           </div>
           <a
@@ -130,7 +110,7 @@ function Index() {
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-secondary/60 blur-3xl -z-10" />
         <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-primary/40 blur-3xl -z-10" />
 
-        <div className="max-w-6xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 pt-16 pb-12 md:pt-24 md:pb-16 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium">
               <Sparkles className="w-3.5 h-3.5" /> CRP 01/31318
@@ -140,8 +120,7 @@ function Index() {
               ciência que <span className="italic text-[color:var(--brand-deep)]">transforma</span>.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-lg leading-relaxed">
-              Psicóloga clínica, aplicadora ABA e acompanhante terapêutica.
-              Um espaço seguro para crianças, adultos e famílias caminharem com confiança rumo ao bem-estar e autoconhecimento.
+              Psicóloga clínica com atuação em ABA e ACT, oferecendo um espaço de escuta, acolhimento e cuidado para crianças, adolescentes, adultos e suas famílias. Um olhar atento a cada história, respeitando a singularidade de cada pessoa e valorizando cada passo do seu desenvolvimento.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -175,21 +154,21 @@ function Index() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="py-24 bg-background">
+      <section id="sobre" className="pt-8 pb-16 md:pt-12 md:pb-20 bg-background">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-5 gap-12 items-center">
           <div className="md:col-span-3">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Sobre mim</span>
-            <h2 className="mt-3 text-4xl md:text-5xl leading-tight">Uma prática construída com escuta, técnica e presença.</h2>
+            <h2 className="mt-3 text-4xl md:text-5xl leading-tight">Acolher, compreender e caminhar junto</h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Sou psicóloga clínica inscrita no CRP 01/31318, aplicadora ABA e acompanhante terapêutica.
-              Atuo no acompanhamento do desenvolvimento infantil e no suporte psicoterapêutico para adultos,
-              sempre com foco no desenvolvimento singular de cada pessoa, na gestão das emoções e no fortalecimento das relações.
+              Sou psicóloga clínica (CRP 01/31318), com atuação fundamentada na Análise do Comportamento Aplicada (ABA) e na Terapia de Aceitação e Compromisso (ACT).
+              Minha trajetória é marcada pelo cuidado com o desenvolvimento infantil, pelo acompanhamento de pessoas neurodivergentes e pela psicoterapia de crianças, adolescentes e adultos.
+              Acredito em uma psicologia que acolhe cada história com sensibilidade, respeita a individualidade e oferece um espaço seguro para o autoconhecimento, o desenvolvimento de habilidades e a construção de uma vida com mais significado.
             </p>
             <ul className="mt-8 grid sm:grid-cols-2 gap-3 text-sm">
               {[
-                "🛋️ Psicoterapia para Adultos",
-                "🧩 Aplicadora ABA",
-                "👧🏽 Acompanhante Terapêutica",
+                "🛋️ Psicoterapia infanto-juvenil e adulta",
+                "🧩 Acompanhamento crianças neurodivergentes",
+                "👧🏽 ACT",
                 "📚 Pós-graduanda em ABA",
               ].map((item) => (
                 <li key={item} className="px-4 py-3 rounded-2xl bg-secondary/50 border border-border/60">
@@ -203,7 +182,7 @@ function Index() {
               <img
                 src={juliaImage}
                 alt="Foto da Psicóloga"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105"
               />
             </div>
           </div>
@@ -301,31 +280,6 @@ function Index() {
                   <p className="text-sm text-muted-foreground leading-relaxed">{p.excerpt}</p>
                 </div>
               </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DEPOIMENTOS */}
-      <section id="depoimentos" className="py-24 bg-gradient-soft">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-2xl mb-12">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Depoimentos</span>
-            <h2 className="mt-3 text-4xl md:text-5xl leading-tight">Histórias que caminham comigo</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <figure
-                key={t.name}
-                className="p-8 rounded-3xl bg-card border border-border/60 shadow-card flex flex-col"
-              >
-                <Quote className="w-8 h-8 text-primary mb-4" strokeWidth={1.5} />
-                <blockquote className="text-foreground leading-relaxed flex-1">"{t.text}"</blockquote>
-                <figcaption className="mt-6 pt-6 border-t border-border/60">
-                  <div className="font-medium">{t.name}</div>
-                  <div className="text-sm text-muted-foreground">{t.role}</div>
-                </figcaption>
-              </figure>
             ))}
           </div>
         </div>
